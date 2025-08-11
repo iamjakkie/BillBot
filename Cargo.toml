@@ -1,0 +1,39 @@
+[package]
+name = "billbot"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+yew = { version = "0.21", features = ["csr"] }
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = [
+  "console",
+  "File",
+  "FileList",
+  "FileReader",
+  "HtmlInputElement",
+  "Event",
+  "EventTarget",
+  "Blob",
+  "Url",
+  "Window",
+  "Document",
+  "Element",
+  "HtmlElement",
+  "HtmlCanvasElement",
+  "CanvasRenderingContext2d",
+] }
+gloo = { version = "0.11", features = ["file", "net", "storage", "utils"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+csv = "1.3"
+wasm-logger = "0.2"
+log = "0.4"
+reqwest = { version = "0.11", features = ["json"] }
+plotters = { version = "0.3", default-features = false, features = ["wasm"] }
+plotters-canvas = "0.3"
